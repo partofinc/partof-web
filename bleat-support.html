@@ -25,7 +25,11 @@
     <li>A Mac or Linux computer with Herdr installed, and SSH (Remote Login on
       a Mac) turned on.</li>
     <li>The <code>bleat</code> command on that computer, to show the pairing
-      code.</li>
+      code. On a Mac, with <a href="https://brew.sh">Homebrew</a>:
+      <code>brew install partofinc/tap/bleat</code>. On Linux (64-bit ARM,
+      including Raspberry Pi 4 and newer, or x86_64), or a Mac without
+      Homebrew:
+      <code>curl -fsSL https://raw.githubusercontent.com/partofinc/bleat-apple/main/Scripts/install.sh | sh</code></li>
     <li>A way for your device to reach the computer: the same network, or a
       VPN such as Tailscale when you are away.</li>
   </ul>
@@ -81,6 +85,11 @@
       device and <code>bleat keys revoke</code> removes one, even if you no
       longer have the device.</li>
   </ul>
+
+  <h2>Source code</h2>
+  <p>Bleat and the <code>bleat</code> command are open source, under the MIT
+    licence: <a href="https://github.com/partofinc/bleat-apple">github.com/partofinc/bleat-apple</a>.
+    The pairing and key handling are described in detail there.</p>
 
   <h2>Privacy</h2>
   <p>Bleat collects nothing. See the
