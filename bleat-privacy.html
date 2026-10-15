@@ -34,11 +34,15 @@
     <li>What you see in Bleat &mdash; sessions, workspaces, agents and the
       contents of a terminal &mdash; is read from your computer while you look
       at it. Terminal contents are shown, not stored.</li>
-    <li>What you type, and the prompts you send, go only to your computer.</li>
+    <li>What you type, and the prompts you send, go only to your computer.
+      Opening a terminal takes control of that pane from whoever was typing
+      in it there.</li>
     <li>For each paired computer, Bleat keeps its name, the addresses it can be
       reached at, its SSH host key, and a short description of its system (such
       as the model and operating system), so it can find the computer again and
-      show which one is which. These are kept on your device only.</li>
+      show which one is which, and the account name Bleat logs in with. These
+      are kept on your own devices only: the iPhone or iPad that paired, and
+      its paired Apple Watch.</li>
   </ul>
 
   <h2>The key</h2>
@@ -51,8 +55,10 @@
     <li>The pairing code holds a temporary key that works once and expires
       within minutes. It is replaced by the device's own key as soon as
       pairing completes.</li>
-    <li>Unpairing in the app removes the device's key from your computer. You
-      can also remove it from the computer with <code>bleat keys</code>.</li>
+    <li>Unpairing in the app removes the device's key from your computer, when
+      the computer can be reached. If it cannot, the app can forget it without
+      removing the key, and the key keeps working there until you remove it.
+      You can always remove it from the computer with <code>bleat keys</code>.</li>
   </ul>
 
   <h2>The camera</h2>

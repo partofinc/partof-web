@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Support for Bleat</title>
   <link rel="stylesheet" href="styles.css" type="text/css" />
+  <style>
+    /* A long command must wrap on a phone rather than run off the screen. */
+    code.command { overflow-wrap: anywhere; }
+  </style>
 </head>
 
 <body>
@@ -29,7 +33,7 @@
       <code>brew install partofinc/tap/bleat</code>. On Linux (64-bit ARM,
       including Raspberry Pi 4 and newer, or x86_64), or a Mac without
       Homebrew:
-      <code>curl -fsSL https://raw.githubusercontent.com/partofinc/bleat-apple/main/Scripts/install.sh | sh</code></li>
+      <code class="command">curl -fsSL https://raw.githubusercontent.com/partofinc/bleat-apple/main/Scripts/install.sh | sh</code></li>
     <li>A way for your device to reach the computer: the same network, or a
       VPN such as Tailscale when you are away.</li>
   </ul>
@@ -40,7 +44,8 @@
       terminal.</li>
     <li>In Bleat, tap <strong>Pair a host</strong> and point the camera at it. If the
       terminal is too small for a code, <code>bleat pair</code> prints a link
-      instead; copy it to your device and paste it into the same screen and tap <strong>Pair with this link</strong>.</li>
+      instead. Copy it to your device, paste it into the same screen, then
+      tap <strong>Pair with this link</strong>.</li>
     <li>The code works once and expires after a few minutes. If it runs out,
       run <code>bleat pair</code> again.</li>
     <li>To pair a second device, open the computer in a device that is already
@@ -63,10 +68,13 @@
 
   <h2>Typing into a pane</h2>
   <ul>
-    <li>Herdr lets one device control a pane at a time. Bleat shows who has
-      control, and takes it over only when you ask.</li>
-    <li>The bar above the keyboard has Esc, Ctrl, Tab, the arrow keys, and
-      quick yes and no answers.</li>
+    <li>Herdr lets one device control a pane at a time. <strong>Opening a
+      terminal in Bleat takes control of that pane</strong>, so if someone is
+      typing in it at the computer, their typing stops reaching it until they
+      click back into it.</li>
+    <li>Above the keyboard are the arrow keys, Esc and Return, which move
+      through an agent's prompts and approvals, and a menu of shortcuts such
+      as &#8963;C, Tab and &#8679;Tab.</li>
   </ul>
 
   <h2>Apple Watch</h2>
@@ -80,7 +88,11 @@
   <h2>Unpairing</h2>
   <ul>
     <li>Unpairing a computer in Bleat removes your device's key from it, so
-      the device can no longer connect.</li>
+      the device can no longer connect. This needs the computer to be
+      reachable.</li>
+    <li>If it cannot be reached &mdash; it is off, sold or rebuilt &mdash;
+      Bleat offers to forget it without removing the key. The key then still
+      works on that computer until you remove it there.</li>
     <li>From the computer, <code>bleat keys list</code> shows every paired
       device and <code>bleat keys revoke</code> removes one, even if you no
       longer have the device.</li>
