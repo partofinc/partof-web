@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy for Bleat</title>
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+
+<body>
+
+  <h1>Privacy Policy for Bleat</h1>
+
+  <p>Bleat collects nothing. There is no account, no sign-in, and no
+    analytics. Bleat connects only to computers you pair it with, directly over
+    SSH, and nothing passes through us, because we have no server for it to
+    pass through. This policy explains that in more detail.</p>
+
+  <h2>What information do we collect?</h2>
+  <ul>
+    <li>None. We collect no personal information of any kind.</li>
+    <li>There is no account, no sign-in, no advertising identifier, and no
+      analytics or crash-reporting service in the app.</li>
+    <li>We do not track you, and we do not share data with any third party,
+      because we hold no data to share.</li>
+  </ul>
+
+  <h2>Your computers</h2>
+  <ul>
+    <li>Bleat connects to the computers you pair it with, and to nothing else.
+      The connection is SSH, from your device straight to your computer, over
+      your own network or a VPN you run, such as Tailscale.</li>
+    <li>What you see in Bleat &mdash; sessions, workspaces, agents and the
+      contents of a terminal &mdash; is read from your computer while you look
+      at it. Terminal contents are shown, not stored.</li>
+    <li>What you type, and the prompts you send, go only to your computer.
+      Opening a terminal takes control of that pane from whoever was typing
+      in it there.</li>
+    <li>For each paired computer, Bleat keeps its name, the addresses it can be
+      reached at, its SSH host key, and a short description of its system (such
+      as the model and operating system), so it can find the computer again and
+      show which one is which, and the account name Bleat logs in with. These
+      are kept on your own devices only: the iPhone or iPad that paired, and
+      its paired Apple Watch.</li>
+  </ul>
+
+  <h2>The key</h2>
+  <ul>
+    <li>When you pair, Bleat makes its own SSH key on your device and adds the
+      public half to your computer's <code>~/.ssh/authorized_keys</code>.
+      <strong>The private key never leaves your device.</strong> It is kept in
+      the Keychain, marked so that it is not synced to iCloud and not restored
+      to another device from a backup.</li>
+    <li>The pairing code holds a temporary key that works once and expires
+      within minutes. It is replaced by the device's own key as soon as
+      pairing completes.</li>
+    <li>Unpairing in the app removes the device's key from your computer, when
+      the computer can be reached. If it cannot, the app can forget it without
+      removing the key, and the key keeps working there until you remove it.
+      You can always remove it from the computer with <code>bleat keys</code>.</li>
+  </ul>
+
+  <h2>The camera</h2>
+  <ul>
+    <li>Bleat asks for camera access only to read the pairing code shown on
+      your computer.</li>
+    <li><strong>No video or still image is ever recorded, saved, or
+        transmitted.</strong></li>
+    <li>Camera access is optional. You can paste the pairing link instead.</li>
+  </ul>
+
+  <h2>Local network</h2>
+  <ul>
+    <li>iOS asks for permission before an app connects to a device on your own
+      network. Bleat needs it to reach a computer at home or in the office by
+      its local name or address. It uses it for nothing else.</li>
+  </ul>
+
+  <h2>Apple Watch</h2>
+  <ul>
+    <li>The watch app asks your iPhone, and your iPhone connects to your
+      computer for it. The watch keeps a copy of the list of your computers,
+      but no key, and it never connects to anything on its own.</li>
+  </ul>
+
+  <h2>Children</h2>
+  <ul>
+    <li>Bleat is rated 4+ and collects no information from anyone, including
+      children.</li>
+  </ul>
+
+  <h2>Changes to this Privacy Policy</h2>
+  <ul>
+    <li>We reserve the right to modify this Privacy Policy at any time. If we
+      make material changes, we will update this page and note the date
+      below.</li>
+  </ul>
+
+  <h2>Contact Us</h2>
+  <p>If you have any questions about this Privacy Policy or about the app,
+    please contact us at <a href="mailto:help%2Bbleat@partof.team">help+bleat@partof.team</a>.</p>
+
+  <p><em>Last updated: 15 October 2026.</em></p>
+
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Support for Bleat</title>
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+  <style>
+    /* A long command must wrap on a phone rather than run off the screen. */
+    code.command { overflow-wrap: anywhere; }
+  </style>
+</head>
+
+<body>
+
+  <h1>Bleat Support</h1>
+
+  <p>Bleat is a remote for <a href="https://herdr.dev">Herdr</a>: it shows
+    your sessions, workspaces and agents, and lets you read and answer them
+    from your iPhone, iPad or Apple Watch. If something is not working, please
+    write to <a href="mailto:help%2Bbleat@partof.team">help+bleat@partof.team</a>
+    and tell us what you were doing. It helps enormously if you say which
+    device you were using, and whether the computer is a Mac or runs
+    Linux.</p>
+
+  <h2>What you need</h2>
+  <ul>
+    <li>A Mac or Linux computer with Herdr installed, and SSH (Remote Login on
+      a Mac) turned on.</li>
+    <li>The <code>bleat</code> command on that computer, to show the pairing
+      code. On a Mac, with <a href="https://brew.sh">Homebrew</a>:
+      <code>brew install partofinc/tap/bleat</code>. On Linux (64-bit ARM,
+      including Raspberry Pi 4 and newer, or x86_64), or a Mac without
+      Homebrew:
+      <code class="command">curl -fsSL https://raw.githubusercontent.com/partofinc/bleat-apple/main/Scripts/install.sh | sh</code></li>
+    <li>A way for your device to reach the computer: the same network, or a
+      VPN such as Tailscale when you are away.</li>
+  </ul>
+
+  <h2>Pairing</h2>
+  <ul>
+    <li>On the computer, run <code>bleat pair</code>. It shows a QR code in the
+      terminal.</li>
+    <li>In Bleat, tap <strong>Pair a host</strong> and point the camera at it. If the
+      terminal is too small for a code, <code>bleat pair</code> prints a link
+      instead. Copy it to your device, paste it into the same screen, then
+      tap <strong>Pair with this link</strong>.</li>
+    <li>The code works once and expires after a few minutes. If it runs out,
+      run <code>bleat pair</code> again.</li>
+    <li>To pair a second device, open the computer in a device that is already
+      paired and choose <strong>Pair another device</strong>. No terminal
+      needed.</li>
+  </ul>
+
+  <h2>It cannot reach my computer</h2>
+  <ul>
+    <li><strong>On the same network:</strong> check that Bleat is allowed to
+      use the local network, in Settings &rsaquo; Privacy &amp; Security
+      &rsaquo; Local Network.</li>
+    <li><strong>Away from home:</strong> your device needs a route to the
+      computer, such as Tailscale running on both. If Tailscale was set up
+      after pairing, Bleat picks up the new address the next time it connects
+      on the home network.</li>
+    <li>A computer's settings in Bleat list the addresses it tries, and you
+      can add one by hand, for example a port forward.</li>
+  </ul>
+
+  <h2>Typing into a pane</h2>
+  <ul>
+    <li>Herdr lets one device control a pane at a time. <strong>Opening a
+      terminal in Bleat takes control of that pane</strong>, so if someone is
+      typing in it at the computer, their typing stops reaching it. Bleat
+      holds the pane only while its terminal is on screen, and gives it back
+      when you leave the terminal.</li>
+    <li>Above the keyboard are the arrow keys, Esc and Return, which move
+      through an agent's prompts and approvals, and a menu of shortcuts such
+      as &#8963;C, Tab and &#8679;Tab.</li>
+  </ul>
+
+  <h2>Apple Watch</h2>
+  <ul>
+    <li>The watch shows the computers paired on your iPhone, and goes through
+      the iPhone to reach them. Keep the iPhone nearby with Bleat
+      installed.</li>
+    <li>Pairing and the terminal are on the iPhone and iPad only.</li>
+  </ul>
+
+  <h2>Unpairing</h2>
+  <ul>
+    <li>Unpairing a computer in Bleat removes your device's key from it, so
+      the device can no longer connect. This needs the computer to be
+      reachable.</li>
+    <li>If it cannot be reached &mdash; it is off, sold or rebuilt &mdash;
+      Bleat offers to forget it without removing the key. The key then still
+      works on that computer until you remove it there.</li>
+    <li>From the computer, <code>bleat keys list</code> shows every paired
+      device and <code>bleat keys revoke</code> removes one, even if you no
+      longer have the device.</li>
+  </ul>
+
+  <h2>Source code</h2>
+  <p>Bleat and the <code>bleat</code> command are open source, under the MIT
+    licence: <a href="https://github.com/partofinc/bleat-apple">github.com/partofinc/bleat-apple</a>.
+    The pairing and key handling are described in detail there.</p>
+
+  <h2>Privacy</h2>
+  <p>Bleat collects nothing. See the
+    <a href="bleat-privacy.html">privacy policy</a>.</p>
+
+</body>
+
+</html>
